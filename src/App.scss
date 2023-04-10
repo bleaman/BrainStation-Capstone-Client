@@ -1,0 +1,410 @@
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	image-rendering: optimizeQuality;
+	object-fit: cover;
+	object-position: center;
+	outline: none;
+	background-color: black;
+}
+
+.animated {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: transparent;
+}
+button.animated {
+	width: 100%;
+	height: auto;
+	border-radius: 2.5rem;
+	background-color: transparent;
+	border: 0.125rem solid #8451c9;
+	outline: none;
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: bold;
+	color: white;
+	padding: 0.625rem 0.9375rem 0.625rem 0.9375rem;
+	margin-top: 0.625rem;
+	margin-bottom: 0.625rem;
+	color: #8451c9;
+	box-shadow: 0 0 10px #13817f;
+
+	&:hover {
+		background-color: #8451c9;
+		color: rgb(133, 191, 189);
+	}
+}
+
+a {
+	color: #8451c9;
+	font-weight: 500;
+	font-size: 1rem;
+	background-color: transparent;
+}
+
+.app__main {
+	height: fit-content;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	// background: url("http://localhost:9950/public/images/abstract_collage.png") no-repeat;
+	background-color: black;
+	background-size: cover;
+	background-position: center;
+}
+
+input:-webkit-autofill {
+	transition: all 0s 50000s;
+}
+
+:hover::-webkit-scrollbar {
+	display: flex;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 9px;
+	border-radius: 50%;
+	background: transparent;
+	display: none;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px #8451c9;
+	border-radius: 50%;
+	background: #8451c9;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #13817f;
+	border-radius: 50%;
+}
+
+[data-tooltip] {
+	position: relative;
+	display: inline-block;
+	z-index: 9999;
+}
+
+[data-tooltip]:before {
+	content: attr(data-tooltip);
+	display: none;
+	width: fit-content;
+	min-width: 150px;
+	background-color: black;
+	color: #8451c9;
+	font-size: 1rem;
+	font-weight: 600;
+	text-shadow: 0 0 20px 5px #13817f;
+	text-align: center;
+	padding: 5px 0;
+	position: absolute;
+	bottom: -90%;
+	left: 50%;
+	margin-left: -60px;
+	opacity: 0;
+	transition: opacity 0.3s;
+	border-radius: 1rem;
+	box-shadow: 0 0 20px 5px #8451c9;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	z-index: 9999;
+}
+
+[data-tooltip]:after {
+	content: "";
+	text-shadow: 0 0 20px 5px #13817f;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 999;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+	position: absolute;
+	display: none;
+	justify-content: center;
+	opacity: 1;
+	z-index: 9999;
+
+	@include tablet {
+		display: flex;
+	}
+}
+
+// <div className="lds-default">
+// 	<div></div>
+// 	<div></div>
+// 	<div></div>
+// 	<div>Skill</div>
+// 	{/*  the one below */}
+// 	<div></div>
+// 	<div></div>
+// 	<div></div>
+// 	<div></div>
+// 	<div></div>
+// 	<div>Share</div>
+// 	{/*  the one below */}
+// 	<div> </div>
+// 	<div></div>
+// </div>
+
+.lds-default {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	// text-shadow: 0 0 20px #13817f;
+}
+.lds-default div {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 10rem;
+	animation: lds-default 1.2s linear infinite;
+}
+.lds-default div:nth-child(1) {
+	animation-delay: 0s;
+	top: 37px;
+	left: 66px;
+	background-color: #13817f;
+}
+.lds-default div:nth-child(2) {
+	animation-delay: -0.1s;
+	top: 22px;
+	left: 62px;
+	background-color: #8451c9;
+	// display: none;
+}
+.lds-default div:nth-child(3) {
+	animation-delay: -0.2s;
+	top: 11px;
+	left: 52px;
+	background-color: #13817f;
+}
+.lds-default div:nth-child(4) {
+	animation-delay: -0.3s;
+	top: 7px;
+	left: 37px;
+	background-color: #8451c9;
+	color: #8451c9;
+	text-shadow: 0 0 20px #8451c9;
+	font-size: 2rem;
+}
+.lds-default div:nth-child(5) {
+	animation-delay: -0.4s;
+	top: 11px;
+	left: 22px;
+	background-color: #13817f;
+}
+.lds-default div:nth-child(6) {
+	animation-delay: -0.5s;
+	top: 22px;
+	left: 11px;
+	background-color: #8451c9;
+	// display: none;
+}
+.lds-default div:nth-child(7) {
+	animation-delay: -0.6s;
+	top: 37px;
+	left: 7px;
+	background-color: #13817f;
+}
+.lds-default div:nth-child(8) {
+	animation-delay: -0.7s;
+	top: 52px;
+	left: 11px;
+	// display: none;
+	background-color: #8451c9;
+}
+.lds-default div:nth-child(9) {
+	animation-delay: -0.8s;
+	top: 62px;
+	left: 22px;
+	background-color: #13817f;
+	color: #13817f;
+	font-size: 2rem;
+}
+.lds-default div:nth-child(10) {
+	animation-delay: -0.9s;
+	top: 66px;
+	left: 37px;
+	background-color: #8451c9;
+	color: #8451c9;
+	text-shadow: 0 0 20px #8451c9;
+	font-size: 2rem;
+}
+.lds-default div:nth-child(11) {
+	animation-delay: -1s;
+	top: 62px;
+	left: 52px;
+	background-color: #13817f;
+	color: #13817f;
+	font-size: 2rem;
+}
+.lds-default div:nth-child(12) {
+	animation-delay: -1.1s;
+	top: 52px;
+	left: 62px;
+	// display: none;
+	background-color: #8451c9;
+}
+
+@keyframes lds-default {
+	0%,
+	20%,
+	80%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(2);
+	}
+}
+
+.lds-heart {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	transform: rotate(45deg);
+	transform-origin: 40px 40px;
+	background-color: transparent;
+}
+.lds-heart div {
+	display: inline-block;
+	top: 32px;
+	left: 32px;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	background: #fff;
+	animation: lds-heart 5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+	background-color: #13817f;
+	box-shadow: 0 0 30px 5px #8451c9;
+}
+.lds-heart div:after,
+.lds-heart div:before {
+	content: " ";
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	background-color: #13817f;
+	box-shadow: 0 0 30px 5px #8451c9;
+}
+.lds-heart div:before {
+	left: -24px;
+	border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+	content: attr(likes);
+	top: -24px;
+	border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+	0% {
+		transform: scale(1);
+	}
+	10% {
+		transform: scale(0.8);
+	}
+	20% {
+		transform: scale(1);
+	}
+	30% {
+		transform: scale(0.8);
+	}
+	40% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.8);
+	}
+	60% {
+		transform: scale(1);
+	}
+	70% {
+		transform: scale(0.8);
+	}
+	80% {
+		transform: scale(1);
+	}
+	90% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.lds-ripple {
+	display: flex;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	border: 0.2rem solid #8451c9;
+	box-shadow: 0 0 20px #13817f;
+	border-radius: 50%;
+	background-color: transparent;
+	border-color: #8451c9;
+}
+.lds-ripple div {
+	position: absolute;
+	border: 3px solid #13817f;
+	opacity: 1;
+	border-radius: 50%;
+	animation: lds-ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+	// background-color: #13817f;
+}
+.lds-ripple div:nth-child(2) {
+	animation-delay: -0.5s;
+	border: 3px solid #8451c9;
+}
+@keyframes lds-ripple {
+	0% {
+		top: 36px;
+		left: 36px;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+	4.9% {
+		top: 36px;
+		left: 36px;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+	5% {
+		top: 36px;
+		left: 36px;
+		width: 0;
+		height: 0;
+		opacity: 1;
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: 72px;
+		height: 72px;
+		opacity: 0;
+	}
+}
