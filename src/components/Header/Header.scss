@@ -1,0 +1,59 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	background-size: auto;
+	height: 7rem;
+	width: 100%;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	@include tablet {
+		margin-bottom: 1rem;
+	}
+
+	&__titles {
+		display: flex;
+		width: 100%;
+		justify-content: center; //center on mobile
+		align-items: center;
+		padding-left: 5rem;
+		padding-right: 5rem;
+
+		@include tablet {
+			padding-left: 33.3%;
+			padding-right: 33.3%;
+		}
+	}
+
+	&__links {
+		border: 0.2rem solid #13817f;
+		box-shadow: 0 0 20px #13817f;
+		border-radius: 0.5rem;
+		width: fit-content;
+		padding: 0.5rem;
+		height: 4rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: 1rem;
+		text-align: center;
+		cursor: pointer;
+		background-color: black;
+
+		&:hover {
+			box-shadow: 0 0 20px 5px #8451c9;
+			transform: scale(1.1);
+		}
+	}
+
+	&__links-img {
+		width: 2.5rem; //2 on mobile
+		height: 2.5rem; //2 on mobile
+		backdrop-filter: blur(2rem);
+		cursor: pointer;
+	}
+}

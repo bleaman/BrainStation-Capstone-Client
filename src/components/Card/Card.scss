@@ -1,0 +1,50 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.business-card {
+	width: 12rem;
+	height: 220px; //120 on mobile
+	position: relative;
+	margin-left: 0.5rem;
+	opacity: 70%;
+	cursor: pointer;
+	&:hover {
+		opacity: 100%;
+	}
+
+	&__image {
+		width: 12rem; //120 on mobile
+		height: 190px; //120 on mobile
+		border-radius: 20px;
+		position: relative;
+		margin-top: 1rem;
+
+		&:hover {
+			box-shadow: 0 0 10px 5px white;
+		}
+	}
+
+	&__time-container {
+		position: absolute;
+		bottom: 15px;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		width: 12rem;
+		margin: 0;
+		text-align: center;
+		background-color: black;
+		border-radius: 20px;
+	}
+
+	&__time {
+		width: 12rem; //120 on mobile
+		font-size: 1rem; //0.5 on mobile
+		color: #b684f8;
+		font-weight: 600;
+		display: flex;
+		justify-content: center;
+		text-shadow: 0 0 10px #13817f;
+		box-shadow: 0 0 20px #13817f;
+		border-radius: 20px;
+	}
+}

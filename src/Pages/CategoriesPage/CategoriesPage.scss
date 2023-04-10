@@ -1,0 +1,14 @@
+.categories-page {
+	height: fit-content;
+	min-height: calc(100vh - 15rem);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__categories-box {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding-bottom: 1.5rem;
+	}
+}

@@ -1,0 +1,32 @@
+.categories {
+	width: 100%;
+	padding-top: 1rem;
+	background-color: transparent;
+	height: 16rem;
+
+	&__cards {
+		width: 100%;
+		display: flex;
+		gap: 1rem;
+		overflow: auto;
+		backdrop-filter: blur(0.5rem);
+		background-color: black;
+	}
+
+	&__header-text-container {
+		display: flex;
+		justify-content: center;
+		background-color: transparent;
+		// background-color: black;
+	}
+
+	&__header-text {
+		font-size: 2rem; //1.5 on mobile
+		font-weight: 600;
+		color: #8451c9;
+		text-align: center;
+		// text-shadow: 0 0 30px #13817f;
+		background-color: transparent;
+		text-shadow: 0 0 20px #13817f;
+	}
+}

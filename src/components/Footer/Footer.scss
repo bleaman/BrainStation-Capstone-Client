@@ -1,0 +1,32 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+	display: flex;
+	justify-content: right;
+	background-color: black;
+	background-size: auto;
+	height: 7rem;
+	width: 100%;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+	&__titles {
+		display: flex;
+		width: 100%;
+		justify-content: space-evenly; //center on mobile
+		align-items: center;
+
+		@include tablet {
+			gap: 4rem;
+		}
+	}
+
+	&__title {
+		font-size: 2rem;
+		font-weight: 600;
+		color: #8451c9;
+		text-align: center;
+		text-shadow: 0 0 30px #13817f;
+	}
+}

@@ -1,0 +1,237 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.my-profile-page {
+	height: fit-content;
+	min-height: calc(100vh - 15rem);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+
+	&__info-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2.5rem;
+		border: 0.2rem solid #13817f;
+		box-shadow: 0 0 20px #13817f;
+		width: 70%;
+		color: #8451c9;
+		padding: 1.5rem;
+		backdrop-filter: blur(2rem);
+		border-radius: 1rem;
+		margin-top: 2rem;
+		background-color: black;
+		margin-bottom: 2rem;
+
+		@include desktop {
+			flex-direction: row;
+			gap: 0;
+		}
+	}
+
+	&__top-box {
+		width: 100%;
+		display: flex;
+		flex-direction: column; //column on mobile
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		@include tablet {
+			flex-direction: row;
+		}
+
+		@include tablet {
+			flex-direction: row;
+			gap: 5rem;
+		}
+
+		@include desktop {
+			flex-direction: column;
+			gap: 1rem;
+		}
+	}
+
+	&__top-box-map {
+		width: 180px;
+		height: 180px;
+		border-radius: 1rem;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			box-shadow: 0 0 20px 5px #8451c9;
+		}
+	}
+
+	&__top-box-left-image-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	&__top-box-left-image {
+		width: 15rem;
+		height: 15rem;
+		border-radius: 1rem;
+	}
+
+	&__likes-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-shadow: 0 0 30px #13817f;
+	}
+
+	&__top-box-right {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		text-shadow: 0 0 30px #13817f;
+	}
+
+	&__top-box-right-text {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		color: #8451c9;
+	}
+
+	&__top-box-right-text-title {
+		font-size: 2rem;
+		font-weight: 600;
+		color: #8451c9;
+		text-align: center;
+		text-shadow: 0 0 30px #13817f;
+		background-color: transparent;
+	}
+
+	&__bottom-box {
+		width: 100%;
+		display: flex;
+		flex-direction: column; //column on mobile
+		justify-content: space-between;
+		align-items: center;
+		text-shadow: 0 0 30px #13817f;
+	}
+
+	&__data-box {
+		width: 70%;
+		height: fit-content;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 0.2rem solid #13817f;
+		box-shadow: 0 0 20px #13817f;
+	}
+	&__comment-box-title {
+		font-size: 2rem;
+		font-weight: 600;
+		color: #8451c9;
+		text-align: center;
+		text-shadow: 0 0 30px #13817f;
+	}
+
+	&__links-img {
+		width: 2.5rem; //2 on mobile
+		height: 2.5rem; //2 on mobile
+	}
+
+	&__like-comment-box {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__comments-container {
+		border: 0.2rem solid #13817f;
+		box-shadow: 0 0 20px #13817f;
+		padding-top: 1rem;
+		padding-bottom: 3rem;
+		background-color: black;
+		border-radius: 1rem;
+	}
+
+	&__comment-box {
+		width: 70%;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__business-container {
+		border: 0.2rem solid #13817f;
+		box-shadow: 0 0 20px #13817f;
+		padding: 1rem;
+		background-color: black;
+		border-radius: 1rem;
+
+		&:hover {
+			box-shadow: 0 0 20px 5px #8451c9;
+		}
+	}
+
+	&__business-large-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 3rem;
+		width: 20rem;
+		margin-bottom: 1rem;
+	}
+
+	&__bottom-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	&__bottom-box-right {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	&__bottom-box-left {
+		background-color: transparent;
+		padding-bottom: 1.5rem;
+	}
+
+	&__business-buttons-container {
+		display: flex;
+		gap: 1rem;
+	}
+
+	&__links-img {
+		width: 2.5rem;
+		height: 2.5rem;
+		background-color: black;
+		border: none;
+		cursor: pointer;
+		&:hover {
+			@include tablet {
+				width: 2.8rem;
+				height: 2.8rem;
+			}
+		}
+	}
+}
