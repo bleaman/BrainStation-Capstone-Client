@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import { Animated } from "react-animated-css";
 import { Link } from "react-router-dom";
 import api from "../../utilities/api";
+import adjustment from "../../assets/icons/008-adjustment.png";
+import trash from "../../assets/icons/003-trash.png";
+import idCard from "../../assets/icons/002-id-card.png";
+import lock from "../../assets/icons/005-protect.png";
 
 function Comment({ refreshComments, comments, nametag, linkprop }) {
 	const [userData, setUserData] = useState([]);
@@ -88,21 +92,21 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 								{commentOwnership ? (
 									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={commentOwnership}>
 										<div onClick={handleEditClick} className="comment__links-img-container" data-tooltip="Edit Comment">
-											<img className="comment__links-img" src={"http://localhost:9950/public/images/008-adjustment.png"} alt="Log Out" />
+											<img className="comment__links-img" src={adjustment} alt="Log Out" />
 										</div>
 									</Animated>
 								) : null}
 								{commentOwnership ? (
 									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={commentOwnership}>
 										<div onClick={handleDeleteClick} className="comment__links-img-container" data-tooltip="Delete Comment">
-											<img className="comment__links-img" src={"http://localhost:9950/public/images/003-trash.png"} alt="Log Out" />
+											<img className="comment__links-img" src={trash} alt="Log Out" />
 										</div>
 									</Animated>
 								) : null}
 								<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={true}>
 									<Link to={linkprop}>
 										<div className="comment__links-img-container" data-tooltip={nametag}>
-											<img className="comment__links-img-user" src={"http://localhost:9950/public/images/002-id-card.png"} alt="Log Out" />
+											<img className="comment__links-img-user" src={idCard} alt="Log Out" />
 										</div>
 									</Link>
 								</Animated>
@@ -116,7 +120,7 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 						<form onSubmit={handleSaveClick} className="comment__content-box comment__edit-box">
 							<input className="comment__edit-input" type="text" value={newComment} onChange={(e) => setNewComment(e.target.value)} />
 							<button className="comment__links-img-container" data-tooltip="Submit Change">
-								<img className="comment__links-img" src={"http://localhost:9950/public/images/005-protect.png"} alt="Log Out" />
+								<img className="comment__links-img" src={lock} alt="Log Out" />
 							</button>
 						</form>
 					</Animated>

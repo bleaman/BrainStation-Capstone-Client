@@ -1,8 +1,6 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
 
 * {
 	box-sizing: border-box;
@@ -63,7 +61,6 @@ a {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	// background: url("http://localhost:9950/public/images/abstract_collage.png") no-repeat;
 	background-color: black;
 	background-size: cover;
 	background-position: center;
