@@ -17,7 +17,6 @@ import UserProfilePage from "./Pages/UserProfilePage/UserProfilePage";
 import Footer from "./components/Footer/Footer";
 import api from "./utilities/api";
 import React from "react";
-import { formValidity } from "./utilities/formValidity";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

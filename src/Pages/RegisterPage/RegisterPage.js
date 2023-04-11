@@ -4,7 +4,6 @@ import { Animated } from "react-animated-css";
 import { useState } from "react";
 import { delay } from "../../utilities/delay";
 import api from "../../utilities/api";
-import { formValidity } from "../../utilities/formValidity";
 
 function RegisterPage() {
 	const [visible, setVisible] = useState(true);
@@ -17,6 +16,7 @@ function RegisterPage() {
 			email: e.target.email.value,
 			password: e.target.password.value,
 		};
+		try {
 			const response = await api.post(`users`, loginInfo);
 			if (!response) {
 				return console.log("There was an error with your request. Please try again.");
