@@ -56,7 +56,7 @@ function ResetPasswordPage() {
 					</Link>
 				</Animated>
 				{isFormSubmitted ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
+					<Animated animationIn="zoomInLeft" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="register-page__form-box">
 							<div className="register-page__form-value">
 								<h2 className="register-page__title animate__animated animate__backInDown">Reset Request Sent</h2>
