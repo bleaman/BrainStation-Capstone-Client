@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-	baseURL: "https://skill-seeker-api.onrender.com",
+	baseURL: "https://skill-seeker-api.onrender.com/api/",
 	timeout: 10000,
 });
 
