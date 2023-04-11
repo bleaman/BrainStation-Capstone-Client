@@ -5,6 +5,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../utilities/api";
 import { delay } from "../../utilities/delay";
+import call from "../../assets/icons/001-call.png";
+import mail from "../../assets/icons/005-mail.png";
+import like from "../../assets/icons/001-like.png";
+import chat from "../../assets/icons/001-chat.png";
+import safe from "../../assets/icons/005-protect.png";
 
 function BusinessProfilePage() {
 	const [businessData, setBusinessData] = useState(null);
@@ -116,14 +121,14 @@ function BusinessProfilePage() {
 							<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
 								<a href={`tel:${businessData.bizphone}`}>
 									<div data-tooltip={businessData.bizphone} className="header__links">
-										<img className="header__links-img business-profile-page__likes-img" src={"http://localhost:9950/public/images/001-call.png"} alt="Categories" />
+										<img className="header__links-img business-profile-page__likes-img" src={call} alt="Categories" />
 									</div>
 								</a>
 							</Animated>
 							<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
 								<a href={`mailto:${businessData.email}`}>
 									<div data-tooltip={businessData.email} className="header__links">
-										<img className="header__links-img business-profile-page__likes-img" src={"http://localhost:9950/public/images/005-mail.png"} alt="Categories" />
+										<img className="header__links-img business-profile-page__likes-img" src={mail} alt="Categories" />
 									</div>
 								</a>
 							</Animated>
@@ -137,12 +142,12 @@ function BusinessProfilePage() {
 							<div className="business-profile-page__like-comment-box">
 								<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
 									<div data-tooltip={`Likes: ${businessLikes}`} className="header__links">
-										<img onClick={handleLikeClick} className="header__links-img business-profile-page__likes-img" src={"http://localhost:9950/public/images/001-like.png"} alt="Categories" />
+										<img onClick={handleLikeClick} className="header__links-img business-profile-page__likes-img" src={like} alt="Categories" />
 									</div>
 								</Animated>
 								<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
 									<div onClick={handleCommentButtonClick} data-tooltip="Post A Comment" className="header__links">
-										<img className="header__links-img" src={"http://localhost:9950/public/images/001-chat.png"} alt="Categories" />
+										<img className="header__links-img" src={chat} alt="Categories" />
 									</div>
 								</Animated>
 							</div>
@@ -161,7 +166,7 @@ function BusinessProfilePage() {
 							<form onSubmit={handleNewCommentSubmit} className="comment__content-box comment__edit-box">
 								<input className="comment__edit-input" name="comment" type="text" value={newComment} onChange={(e) => setNewComment(e.target.value)} autoFocus />
 								<button className="comment__links-img-container" data-tooltip="Post Comment">
-									<img className="comment__links-img" src={"http://localhost:9950/public/images/005-protect.png"} alt="Log Out" />
+									<img className="comment__links-img" src={safe} alt="Log Out" />
 								</button>
 							</form>
 						</div>

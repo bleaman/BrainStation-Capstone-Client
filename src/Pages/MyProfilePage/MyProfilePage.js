@@ -4,6 +4,12 @@ import React, { useState, useEffect } from "react";
 import { Animated } from "react-animated-css";
 import api from "../../utilities/api";
 import { Link } from "react-router-dom";
+import gear from "../../assets/icons/001-gear.png";
+import safe from "../../assets/icons/006-safe-box.png";
+import bulb from "../../assets/icons/007-bulb.png";
+import note from "../../assets/icons/002-note.png";
+import trash from "../../assets/icons/003-trash.png";
+import avatarBlue from "../../assets/icons/avatarblue.png";
 
 function MyProfilePage(token) {
 	const [userData, setUserData] = useState(null);
@@ -69,7 +75,7 @@ function MyProfilePage(token) {
 					<div className="my-profile-page__top-box-left">
 						<Animated animationIn="zoomInLeft" animationInDuration={1500} animationOut="zoomOutDown" isVisible={true}>
 							<div className="my-profile-page__top-box-left-image-box">
-								<img className="my-profile-page__top-box-left-image avatar" src="http://localhost:9950/public/images/avatarblue.png" alt="user" />
+								<img className="my-profile-page__top-box-left-image avatar" src={avatarBlue} alt="user" />
 							</div>
 						</Animated>
 					</div>
@@ -87,14 +93,14 @@ function MyProfilePage(token) {
 							<Animated animationIn="zoomInLeft" animationInDuration={2000} animationOut="zoomOutDown" isVisible={true}>
 								<Link className="header__nav-link" to={`/user/edit/${userIdState}`}>
 									<div data-tooltip="Edit User" className="header__links">
-										<img className="header__links-img" src={"http://localhost:9950/public/images/001-gear.png"} alt="Categories" />
+										<img className="header__links-img" src={gear} alt="Categories" />
 									</div>
 								</Link>
 							</Animated>
 							<Animated animationIn="zoomInRight" animationInDuration={2000} animationOut="zoomOutDown" isVisible={true}>
 								<Link className="header__nav-link" to={`/user/password/${userIdState}`}>
 									<div data-tooltip="Change Password" className="header__links">
-										<img className="header__links-img" src={"http://localhost:9950/public/images/006-safe-box.png"} alt="Categories" />
+										<img className="header__links-img" src={safe} alt="Categories" />
 									</div>
 								</Link>
 							</Animated>
@@ -109,7 +115,7 @@ function MyProfilePage(token) {
 						<Animated animationIn="zoomInLeft" animationInDuration={2250} animationOut="zoomOutDown" isVisible={true}>
 							<Link className="header__nav-link" to="/business/create">
 								<div data-tooltip="Create A Business" className="header__links">
-									<img className="header__links-img" src={"http://localhost:9950/public/images/007-bulb.png"} alt="Categories" />
+									<img className="header__links-img" src={bulb} alt="Categories" />
 								</div>
 							</Link>
 						</Animated>
@@ -124,7 +130,7 @@ function MyProfilePage(token) {
 										</Link>
 										<div className="my-profile-page__business-buttons-container">
 											<Link data-tooltip="Edit Business" to={`/business/${business.id}/edit`}>
-												<img className="header__links-img" src={"http://localhost:9950/public/images/002-note.png"} alt="Categories" />
+												<img className="header__links-img" src={note} alt="Categories" />
 											</Link>
 											<div
 												onClick={() => {
@@ -132,7 +138,7 @@ function MyProfilePage(token) {
 												}}
 												data-tooltip="Delete (Admin)"
 											>
-												<img className="header__links-img" src={"http://localhost:9950/public/images/003-trash.png"} alt="Categories" />
+												<img className="header__links-img" src={trash} alt="Categories" />
 											</div>
 										</div>
 									</div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Animated } from "react-animated-css";
 import { Link, useParams } from "react-router-dom";
 import api from "../../utilities/api";
+import avatarBlue from "../../assets/icons/avatarblue.png";
 
 function UserProfilePage() {
 	const [userData, setUserData] = useState(null);
@@ -59,7 +60,7 @@ function UserProfilePage() {
 					<div className="user-profile-page__top-box-left">
 						<Animated animationIn="zoomInLeft" animationInDuration={1500} animationOut="zoomOutDown" isVisible={true}>
 							<div className="user-profile-page__top-box-left-image-box">
-								<img className="user-profile-page__top-box-left-image avatar" src="http://localhost:9950/public/images/avatarblue.png" alt="user" />
+								<img className="user-profile-page__top-box-left-image avatar" src={avatarBlue} alt="user" />
 							</div>
 						</Animated>
 					</div>
