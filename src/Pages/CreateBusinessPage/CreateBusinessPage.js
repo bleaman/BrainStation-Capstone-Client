@@ -51,7 +51,7 @@ function CreateBusinessPage() {
 					<Animated animationIn="zoomInLeft" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="edit-user__form-box">
 							<div className="edit-user__form-value">
-								<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">Business Created</h2>
+								<h2 className="edit-user__title">Business Created</h2>
 							</div>
 						</div>
 					</Animated>
