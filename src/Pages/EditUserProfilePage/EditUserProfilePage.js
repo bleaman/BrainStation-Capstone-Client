@@ -64,11 +64,11 @@ function EditUserProfilePage() {
 								<form onSubmit={handleSubmit}>
 									<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">User Info</h2>
 									<div className="edit-user__inputbox animate__animated animate__lightSpeedInRight">
-										<input className="edit-user__input" minLength="1" maxLength="50" type="text" name="username" value={userName} onChange={(event) => setUserName(event.target.value)} required />
+										<input className="edit-user__input" minLength="1" maxLength="50" type="text" autocomplete="off" name="username" value={userName} onChange={(event) => setUserName(event.target.value)} required />
 										<label className="edit-user__label">Name</label>
 									</div>
 									<div className="edit-user__inputbox animate__animated animate__lightSpeedInLeft">
-										<input className="edit-user__input" type="email" name="useremail" value={userEmail} onChange={(event) => setUserEmail(event.target.value)} pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
+										<input className="edit-user__input" type="email" autocomplete="off" name="useremail" value={userEmail} onChange={(event) => setUserEmail(event.target.value)} pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
 										<label className="edit-user__label">Email</label>
 									</div>
 									<div className="edit-user__forget">
