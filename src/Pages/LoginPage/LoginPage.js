@@ -5,11 +5,11 @@ import { useState } from "react";
 import { delay } from "../../utilities/delay";
 
 function LoginPage({ handleLogin }) {
-	const [visible, setVisible] = useState(true);
+	const [isFormVisible, setIsFormVisible] = useState(true);
 
 	async function doFunction(event) {
 		event.preventDefault();
-		setVisible(false);
+		setIsFormVisible(false);
 		await delay(500);
 		handleLogin(event);
 	}
@@ -17,7 +17,7 @@ function LoginPage({ handleLogin }) {
 	return (
 		<>
 			<section className="login-page">
-				<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="lds-default">
 						<div></div>
 						<div></div>
@@ -35,7 +35,7 @@ function LoginPage({ handleLogin }) {
 						<div></div>
 					</div>
 				</Animated>
-				<Animated animationIn="zoomInRight" animationInDuration={3000} animationOut="zoomOutLeft" animationOutDuration={500} isVisible={visible}>
+				<Animated animationIn="zoomInRight" animationInDuration={3000} animationOut="zoomOutLeft" animationOutDuration={500} isVisible={isFormVisible}>
 					<div className="login-page__form-box">
 						<div className="login-page__form-value">
 							<form onSubmit={doFunction}>
@@ -70,8 +70,7 @@ function LoginPage({ handleLogin }) {
 						</div>
 					</div>
 				</Animated>
-
-				<Animated animationIn="zoomInLeft" animationInDuration={2000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInLeft" animationInDuration={2000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="lds-ripple">
 						<div></div>
 						<div></div>

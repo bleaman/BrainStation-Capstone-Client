@@ -10,6 +10,8 @@ function EditUserProfilePage() {
 	const [userName, setUserName] = useState("");
 	const [userEmail, setUserEmail] = useState("");
 	const navigate = useNavigate();
+	const [isFormVisible, setIsVisible] = useState(true);
+	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -28,7 +30,8 @@ function EditUserProfilePage() {
 		event.preventDefault();
 		const name = event.target.elements.bizname.value;
 		const email = event.target.elements.bizdescription.value;
-
+		setIsVisible(false);
+		setIsFormSubmitted(true);
 		api
 			.put(`users/${userId}`, {
 				name,
@@ -45,30 +48,41 @@ function EditUserProfilePage() {
 	return (
 		<>
 			<section className="edit-user">
-				<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
-					<div className="edit-user__form-box">
-						<div className="edit-user__form-value">
-							<form onSubmit={handleSubmit}>
-								<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">User Info</h2>
-								<div className="edit-user__inputbox animate__animated animate__lightSpeedInRight">
-									<input className="edit-user__input" minLength="1" maxLength="50" type="text" name="username" value={userName} onChange={(event) => setUserName(event.target.value)} required />
-									<label className="edit-user__label">Name</label>
-								</div>
-								<div className="edit-user__inputbox animate__animated animate__lightSpeedInLeft">
-									<input className="edit-user__input" type="email" name="useremail" value={userEmail} onChange={(event) => setUserEmail(event.target.value)} pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
-									<label className="edit-user__label">Email</label>
-								</div>
-								<div className="edit-user__forget">
-									<div className="edit-user__forgot-password animate__animated animate__lightSpeedInRight">
-										<button type="submit" className="edit-user__button">
-											Submit Changes
-										</button>
-									</div>
-								</div>
-							</form>
+				{isFormSubmitted ? (
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
+						<div className="edit-user__form-box">
+							<div className="edit-user__form-value">
+								<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">Info Changed</h2>
+							</div>
 						</div>
-					</div>
-				</Animated>
+					</Animated>
+				) : null}
+				{isFormVisible ? (
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormVisible}>
+						<div className="edit-user__form-box">
+							<div className="edit-user__form-value">
+								<form onSubmit={handleSubmit}>
+									<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">User Info</h2>
+									<div className="edit-user__inputbox animate__animated animate__lightSpeedInRight">
+										<input className="edit-user__input" minLength="1" maxLength="50" type="text" name="username" value={userName} onChange={(event) => setUserName(event.target.value)} required />
+										<label className="edit-user__label">Name</label>
+									</div>
+									<div className="edit-user__inputbox animate__animated animate__lightSpeedInLeft">
+										<input className="edit-user__input" type="email" name="useremail" value={userEmail} onChange={(event) => setUserEmail(event.target.value)} pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
+										<label className="edit-user__label">Email</label>
+									</div>
+									<div className="edit-user__forget">
+										<div className="edit-user__forgot-password animate__animated animate__lightSpeedInRight">
+											<button type="submit" className="edit-user__button">
+												Submit Changes
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</Animated>
+				) : null}
 			</section>
 		</>
 	);

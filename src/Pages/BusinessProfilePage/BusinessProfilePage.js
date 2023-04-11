@@ -105,10 +105,10 @@ function BusinessProfilePage() {
 			<div className="business-profile-page__info-container">
 				<div className="business-profile-page__top-box">
 					<div className="business-profile-page__top-box-right">
-						<Animated animationIn="zoomInDown" animationInDuration={1250} animationOut="zoomOutDown" isVisible={true}>
+						<Animated animationIn="zoomInDown" animationInDuration={1250} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 							<div className="business-profile-page__top-box-right-text-title">{businessData.bizname}</div>
 						</Animated>
-						<Animated animationIn="zoomInLeft" animationInDuration={2250} animationOut="zoomOutDown" isVisible={true}>
+						<Animated animationIn="zoomInLeft" animationInDuration={2250} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 							<div className="business-profile-page__top-box-right-text">{businessData.bizlocation}</div>
 							<div className="business-profile-page__top-box-map">
 								<div className="map-test">
@@ -118,14 +118,14 @@ function BusinessProfilePage() {
 							</div>
 						</Animated>
 						<div className="business-profile-page__top-box-right-text">
-							<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+							<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 								<a href={`tel:${businessData.bizphone}`}>
 									<div data-tooltip={businessData.bizphone} className="header__links">
 										<img className="header__links-img business-profile-page__likes-img" src={call} alt="Categories" />
 									</div>
 								</a>
 							</Animated>
-							<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+							<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 								<a href={`mailto:${businessData.email}`}>
 									<div data-tooltip={businessData.email} className="header__links">
 										<img className="header__links-img business-profile-page__likes-img" src={mail} alt="Categories" />
@@ -136,16 +136,16 @@ function BusinessProfilePage() {
 					</div>
 					<div className="business-profile-page__top-box-left">
 						<div className="business-profile-page__top-box-left-image-box">
-							<Animated animationIn="zoomInRight" animationInDuration={1500} animationOut="zoomOutDown" isVisible={true}>
+							<Animated animationIn="zoomInRight" animationInDuration={1500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 								<img className="business-profile-page__top-box-left-image" src={businessData.bizimg} alt="business" />
 							</Animated>
 							<div className="business-profile-page__like-comment-box">
-								<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+								<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 									<div data-tooltip={`Likes: ${businessLikes}`} className="header__links">
 										<img onClick={handleLikeClick} className="header__links-img business-profile-page__likes-img" src={like} alt="Categories" />
 									</div>
 								</Animated>
-								<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+								<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 									<div onClick={handleCommentButtonClick} data-tooltip="Post A Comment" className="header__links">
 										<img className="header__links-img" src={chat} alt="Categories" />
 									</div>
@@ -161,7 +161,7 @@ function BusinessProfilePage() {
 					<div></div>
 				</div>
 				{isFormVisible ? (
-					<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={isAnimationVisible}>
+					<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isAnimationVisible}>
 						<div className="comment__width-fix">
 							<form onSubmit={handleNewCommentSubmit} className="comment__content-box comment__edit-box">
 								<input className="comment__edit-input" name="comment" type="text" value={newComment} onChange={(e) => setNewComment(e.target.value)} autoFocus />
