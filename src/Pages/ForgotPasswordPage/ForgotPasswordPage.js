@@ -32,7 +32,7 @@ function ForgotPasswordPage() {
 	return (
 		<>
 			<section className="forgot-password">
-				<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<Link to="/">
 						<div className="lds-default">
 							<div></div>
@@ -53,7 +53,7 @@ function ForgotPasswordPage() {
 					</Link>
 				</Animated>
 				{isFormSubmitted ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={isFormSubmitted}>
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="register-page__form-box">
 							<div className="register-page__form-value">
 								<h2 className="register-page__title animate__animated animate__backInDown">Email Sent</h2>
@@ -83,7 +83,7 @@ function ForgotPasswordPage() {
 						</div>
 					</Animated>
 				) : null}
-				<Animated animationIn="zoomInRight" animationInDuration={2000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInRight" animationInDuration={2000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="lds-ripple">
 						<div></div>
 						<div></div>

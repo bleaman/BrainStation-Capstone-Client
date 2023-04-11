@@ -34,7 +34,7 @@ function RegisterPage() {
 	return (
 		<>
 			<section className="register-page">
-				<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<Link to="/">
 						<div className="lds-default">
 							<div></div>
@@ -54,7 +54,7 @@ function RegisterPage() {
 				</Animated>
 
 				{isFormSubmitted ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={3000} animationOut="zoomOutDown" isVisible={isFormSubmitted}>
+					<Animated animationIn="zoomInLeft" animationInDuration={3000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="register-page__form-box">
 							<div className="register-page__form-value">
 								<h2 className="register-page__title animate__animated animate__backInDown">Registration Sent</h2>
@@ -63,7 +63,7 @@ function RegisterPage() {
 					</Animated>
 				) : null}
 				{isFormVisible ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={3000} animationOut="zoomOutDown" isVisible={isFormVisible}>
+					<Animated animationIn="zoomInLeft" animationInDuration={3000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormVisible}>
 						<div className="register-page__form-box">
 							<div className="register-page__form-value">
 								<form onSubmit={handleRegister}>
@@ -92,7 +92,7 @@ function RegisterPage() {
 						</div>
 					</Animated>
 				) : null}
-				<Animated animationIn="zoomInRight" animationInDuration={2000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInRight" animationInDuration={2000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="lds-ripple">
 						<div></div>
 						<div></div>

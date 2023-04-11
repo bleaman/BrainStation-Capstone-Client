@@ -37,7 +37,7 @@ function ChangePasswordPage() {
 		<>
 			<section className="change-password">
 				{isFormSubmitted ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={isFormSubmitted}>
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="edit-user__form-box">
 							<div className="edit-user__form-value">
 								<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">Password Changed</h2>
@@ -46,7 +46,7 @@ function ChangePasswordPage() {
 					</Animated>
 				) : null}
 				{isFormVisible ? (
-					<Animated animationIn="zoomInUp" animationInDuration={1000} animationOut="zoomOutDown" isVisible={isFormVisible}>
+					<Animated animationIn="zoomInUp" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormVisible}>
 						<div className="change-password__form-box">
 							<div className="change-password__form-value">
 								<form onSubmit={handleSubmit}>

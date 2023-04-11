@@ -62,7 +62,7 @@ function EditBusinessProfilePage() {
 	return (
 		<>
 			<section className="edit-business">
-				<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="edit-business__form-box">
 						<div className="edit-business__form-value">
 							<form onSubmit={handleSubmit}>

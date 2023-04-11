@@ -49,7 +49,7 @@ function EditUserProfilePage() {
 		<>
 			<section className="edit-user">
 				{isFormSubmitted ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={isFormSubmitted}>
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="edit-user__form-box">
 							<div className="edit-user__form-value">
 								<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">Info Changed</h2>
@@ -58,7 +58,7 @@ function EditUserProfilePage() {
 					</Animated>
 				) : null}
 				{isFormVisible ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={isFormVisible}>
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormVisible}>
 						<div className="edit-user__form-box">
 							<div className="edit-user__form-value">
 								<form onSubmit={handleSubmit}>

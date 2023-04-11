@@ -48,7 +48,7 @@ function CreateBusinessPage() {
 		<>
 			<section className="create-business">
 				{isFormSubmitted ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={isFormSubmitted}>
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="edit-user__form-box">
 							<div className="edit-user__form-value">
 								<h2 className="edit-user__title animate__animated animate__lightSpeedInLeft">Business Created</h2>
@@ -57,7 +57,7 @@ function CreateBusinessPage() {
 					</Animated>
 				) : null}
 				{isFormVisible ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" isVisible={isFormVisible}>
+					<Animated animationIn="zoomInLeft" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormVisible}>
 						<div className="create-business__form-box">
 							<div className="create-business__form-value">
 								<form onSubmit={handleSubmit}>

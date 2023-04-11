@@ -78,7 +78,7 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 
 	return (
 		<>
-			<Animated animationIn="zoomInUp" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+			<Animated animationIn="zoomInUp" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 				<div className="comment__content-box">
 					<div className="comment__left-side">{displayedComment}</div>
 					<div className="comment__right-side">
@@ -90,20 +90,20 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 							</label>
 							<div className={`hamburger-menu-content hamburger${comments.comment_id}`}>
 								{commentOwnership ? (
-									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={commentOwnership}>
+									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={commentOwnership}>
 										<div onClick={handleEditClick} className="comment__links-img-container" data-tooltip="Edit Comment">
 											<img className="comment__links-img" src={adjustment} alt="Log Out" />
 										</div>
 									</Animated>
 								) : null}
 								{commentOwnership ? (
-									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={commentOwnership}>
+									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={commentOwnership}>
 										<div onClick={handleDeleteClick} className="comment__links-img-container" data-tooltip="Delete Comment">
 											<img className="comment__links-img" src={trash} alt="Log Out" />
 										</div>
 									</Animated>
 								) : null}
-								<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={true}>
+								<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 									<Link to={linkprop}>
 										<div className="comment__links-img-container" data-tooltip={nametag}>
 											<img className="comment__links-img-user" src={idCard} alt="Log Out" />
@@ -116,7 +116,7 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 				</div>
 
 				{isEditing ? (
-					<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" isVisible={isEditing}>
+					<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isEditing}>
 						<form onSubmit={handleSaveClick} className="comment__content-box comment__edit-box">
 							<input className="comment__edit-input" type="text" value={newComment} onChange={(e) => setNewComment(e.target.value)} />
 							<button className="comment__links-img-container" data-tooltip="Submit Change">

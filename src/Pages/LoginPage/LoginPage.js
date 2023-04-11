@@ -17,7 +17,7 @@ function LoginPage({ handleLogin }) {
 	return (
 		<>
 			<section className="login-page">
-				<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInRight" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="lds-default">
 						<div></div>
 						<div></div>
@@ -70,7 +70,7 @@ function LoginPage({ handleLogin }) {
 						</div>
 					</div>
 				</Animated>
-				<Animated animationIn="zoomInLeft" animationInDuration={2000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInLeft" animationInDuration={2000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="lds-ripple">
 						<div></div>
 						<div></div>

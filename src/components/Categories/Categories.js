@@ -5,7 +5,7 @@ import CardList from "../CardList/CardList";
 function Categories({ data, categoryType }) {
 	return (
 		<div className="categories">
-			<Animated animationIn="zoomInLeft" animationInDuration={3000} animationOut="zoomOutDown" isVisible={true}>
+			<Animated animationIn="zoomInLeft" animationInDuration={3000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 				<div className="categories__header-text-container">
 					<div className="categories__header-text">{categoryType}</div>
 				</div>

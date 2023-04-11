@@ -14,21 +14,21 @@ function Header() {
 	return (
 		<div className="header">
 			<div className="header__titles">
-				<Animated animationIn="zoomInDown" animationInDuration={1000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInDown" animationInDuration={1000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<NavLink className="header__nav-link" to="/categories">
 						<div data-tooltip="Categories" className="header__links">
 							<img className="header__links-img" src={investigation} alt="Categories" />
 						</div>
 					</NavLink>
 				</Animated>
-				<Animated animationIn="zoomInDown" animationInDuration={1500} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInDown" animationInDuration={1500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<NavLink className="header__nav-link" to="/myprofile">
 						<div data-tooltip="My Profile" className="header__links">
 							<img className="header__links-img" src={home} alt="My Profile" />
 						</div>
 					</NavLink>
 				</Animated>
-				<Animated animationIn="zoomInDown" animationInDuration={2000} animationOut="zoomOutDown" isVisible={true}>
+				<Animated animationIn="zoomInDown" animationInDuration={2000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div onClick={handleLogOut} data-tooltip="Log Out" className="header__links">
 						<img className="header__links-img" src={lock} alt="Log Out" />
 					</div>
