@@ -56,7 +56,7 @@ function ForgotPasswordPage() {
 					<Animated animationIn="zoomInLeft" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="register-page__form-box">
 							<div className="register-page__form-value">
-								<h2 className="register-page__title animate__animated animate__backInDown">Email Sent</h2>
+								<h2 className="register-page__title">Email Sent</h2>
 							</div>
 						</div>
 					</Animated>
