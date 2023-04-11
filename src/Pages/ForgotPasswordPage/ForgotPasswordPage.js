@@ -4,7 +4,6 @@ import { Animated } from "react-animated-css";
 import { useState } from "react";
 import { delay } from "../../utilities/delay";
 import api from "../../utilities/api";
-import { formValidity } from "../../utilities/formValidity";
 
 function ForgotPasswordPage() {
 	const [visible, setVisible] = useState(true);
