@@ -69,11 +69,11 @@ function RegisterPage() {
 								<form onSubmit={handleRegister}>
 									<h2 className="register-page__title animate__animated animate__backInDown">Register</h2>
 									<div className="register-page__inputbox animate__animated animate__backInLeft">
-										<input className="register-page__input" minLength="1" maxLength="50" type="text" name="name" required />
+										<input className="register-page__input" minLength="1" maxLength="50" type="text" autocomplete="off" name="name" required />
 										<label className="register-page__label">Name</label>
 									</div>
 									<div className="register-page__inputbox animate__animated animate__backInRight">
-										<input className="register-page__input" type="email" name="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
+										<input className="register-page__input" type="email" autocomplete="off" name="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
 										<label className="register-page__label">Email</label>
 									</div>
 									<div className="register-page__inputbox animate__animated animate__backInLeft">
