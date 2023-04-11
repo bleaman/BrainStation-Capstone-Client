@@ -38,10 +38,6 @@ function App() {
 			email: e.target.email.value,
 			password: e.target.password.value,
 		};
-		const checkValidity = formValidity(loginInfo);
-		if (!checkValidity) {
-			return;
-		}
 		api
 			.post(`users/login`, loginInfo)
 			.then((res) => {

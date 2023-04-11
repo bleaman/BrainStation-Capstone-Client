@@ -17,11 +17,6 @@ function RegisterPage() {
 			email: e.target.email.value,
 			password: e.target.password.value,
 		};
-		const checkValidity = formValidity(loginInfo.email);
-		if (!checkValidity) {
-			return;
-		}
-		try {
 			const response = await api.post(`users`, loginInfo);
 			if (!response) {
 				return console.log("There was an error with your request. Please try again.");
