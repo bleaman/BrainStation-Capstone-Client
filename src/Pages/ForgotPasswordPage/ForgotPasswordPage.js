@@ -15,10 +15,6 @@ function ForgotPasswordPage() {
 		const loginInfo = {
 			email: e.target.email.value,
 		};
-		const checkValidity = formValidity(loginInfo);
-		if (!checkValidity) {
-			return;
-		}
 		try {
 			const response = await api.post(`password`, loginInfo);
 			if (!response) {
