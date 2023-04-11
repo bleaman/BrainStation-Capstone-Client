@@ -17,7 +17,7 @@ function RegisterPage() {
 			email: e.target.email.value,
 			password: e.target.password.value,
 		};
-		const checkValidity = formValidity(loginInfo);
+		const checkValidity = formValidity(loginInfo.email);
 		if (!checkValidity) {
 			return;
 		}
