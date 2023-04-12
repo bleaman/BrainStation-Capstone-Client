@@ -48,27 +48,27 @@
 	&__links-img {
 		width: 2.5rem; //2 on mobile
 		height: 2.5rem; //2 on mobile
-		// backdrop-filter: blur(2rem);
-		// background: transparent;
-		background-color: black;
+		background: transparent;
 		border: none;
 		cursor: pointer;
-		// display: none;
 		@include tablet {
 			display: inline-block;
 		}
 		&:hover {
 			width: 3rem;
 			height: 3rem;
-			// box-shadow: 0 0 20px white;
+			box-shadow: 0 0 20px #8451c9;
 		}
+	}
+
+	&__links-img-container {
+		border: none;
+		background-color: transparent;
 	}
 
 	&__links-img-user {
 		width: 2.5rem; //2 on mobile
 		height: 2.5rem; //2 on mobile
-		// backdrop-filter: blur(2rem);
-		// background: transparent;
 		background-color: black;
 		border: none;
 		cursor: pointer;

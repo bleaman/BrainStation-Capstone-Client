@@ -14,6 +14,7 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 	const [newComment, setNewComment] = useState(comments.comment);
 	const [displayedComment, setDisplayedComment] = useState(comments.comment);
 	const [commentOwnership, setCommentOwnership] = useState(false);
+	const [admin, setAdmin] = useState(false);
 
 	const handleEditClick = () => {
 		setIsEditing(!isEditing);
@@ -58,6 +59,17 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 
 	useEffect(() => {
 		api
+			.get(`admin`)
+			.then((response) => {
+				return setAdmin(response.data.isAdmin);
+			})
+			.catch((error) => {
+				return console.log(error);
+			});
+	});
+
+	useEffect(() => {
+		api
 			.get(`users/${comments.user_id}`)
 			.then((response) => {
 				return setUserData(response.data);
@@ -96,8 +108,8 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 										</div>
 									</Animated>
 								) : null}
-								{commentOwnership ? (
-									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={commentOwnership}>
+								{admin ? (
+									<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={admin}>
 										<div onClick={handleDeleteClick} className="comment__links-img-container" data-tooltip="Delete Comment">
 											<img className="comment__links-img" src={trash} alt="Log Out" />
 										</div>

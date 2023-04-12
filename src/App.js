@@ -31,7 +31,6 @@ function App() {
 	}, [localToken]);
 
 	function handleLogin(e) {
-		console.log(e.target);
 		e.preventDefault();
 		const loginInfo = {
 			email: e.target.email.value,
