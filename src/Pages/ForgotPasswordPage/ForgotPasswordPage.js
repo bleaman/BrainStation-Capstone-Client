@@ -82,7 +82,7 @@ function ForgotPasswordPage() {
 								<form onSubmit={handleForgotPassword}>
 									<h2 className="forgot-password__title animate__animated animate__backInDown">Password Reset</h2>
 									<div className="forgot-password__inputbox animate__animated animate__backInLeft">
-										<input className="forgot-password__input" type="email" autocomplete="off" name="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
+										<input className="forgot-password__input" type="email" autoComplete="off" name="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required />
 										<label className="forgot-password__label">Email</label>
 									</div>
 									<div className="forgot-password__forget">

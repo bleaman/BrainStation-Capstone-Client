@@ -75,7 +75,7 @@ function LoginPage({ handleLogin, isLoginSubmitted, isFailedLogin, isFailedLogin
 								<form onSubmit={doFunction}>
 									<h2 className="login-page__title animate__animated animate__backInDown">Log In</h2>
 									<div className="login-page__inputbox animate__animated animate__backInLeft">
-										<input className="login-page__input" type="email" autocomplete="off" name="email" required />
+										<input className="login-page__input" type="email" autoComplete="off" name="email" required />
 										<label className="login-page__label">Email</label>
 									</div>
 									<div className="login-page__inputbox animate__animated animate__backInRight">

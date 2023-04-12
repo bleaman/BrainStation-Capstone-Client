@@ -164,7 +164,7 @@ function BusinessProfilePage() {
 					<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isAnimationVisible}>
 						<div className="comment__width-fix">
 							<form onSubmit={handleNewCommentSubmit} className="comment__content-box comment__edit-box">
-								<input className="comment__edit-input" name="comment" type="text" autocomplete="off" value={newComment} onChange={(e) => setNewComment(e.target.value)} autoFocus />
+								<input className="comment__edit-input" name="comment" type="text" autoComplete="off" value={newComment} onChange={(e) => setNewComment(e.target.value)} autoFocus />
 								<button className="comment__links-img-container" data-tooltip="Post Comment">
 									<img className="comment__links-img" src={safe} alt="Log Out" />
 								</button>
