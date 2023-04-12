@@ -61,6 +61,20 @@ function ResetPasswordPage() {
 							<div className="register-page__form-value">
 								<h2 className="register-page__title">Reset Request Sent</h2>
 							</div>
+							<div className="lds-default">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
 						</div>
 					</Animated>
 				) : null}
