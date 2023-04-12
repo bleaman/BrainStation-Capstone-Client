@@ -116,7 +116,7 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 									</Animated>
 								) : null}
 								<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
-									<Link to={linkprop}>
+									<Link className="comment__link" to={linkprop}>
 										<div className="comment__links-img-container" data-tooltip={nametag}>
 											<img className="comment__links-img-user" src={idCard} alt="Log Out" />
 										</div>

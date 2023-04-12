@@ -23,7 +23,7 @@
 		backdrop-filter: blur(2rem);
 		border-radius: 1rem;
 		margin-top: 2rem;
-		background-color: black;
+		background-color: transparent;
 		margin-bottom: 2rem;
 
 		@include tablet {
@@ -163,7 +163,7 @@
 		box-shadow: 0 0 20px #13817f;
 		padding-top: 1rem;
 		padding-bottom: 3rem;
-		background-color: black;
+		background-color: transparent;
 		border-radius: 1rem;
 	}
 
@@ -171,7 +171,7 @@
 		border: 0.2rem solid #13817f;
 		box-shadow: 0 0 20px #13817f;
 		padding: 1rem;
-		background-color: black;
+		background-color: transparent;
 		border-radius: 1rem;
 		display: flex;
 		justify-content: center;
