@@ -23,7 +23,7 @@
 		backdrop-filter: blur(2rem);
 		border-radius: 1rem;
 		margin-top: 2rem;
-		background-color: black;
+		background-color: transparent;
 		margin-bottom: 2rem;
 
 		@include desktop {
@@ -160,7 +160,7 @@
 		box-shadow: 0 0 20px #13817f;
 		padding-top: 1rem;
 		padding-bottom: 3rem;
-		background-color: black;
+		background-color: transparent;
 		border-radius: 1rem;
 	}
 
@@ -177,7 +177,7 @@
 		border: 0.2rem solid #13817f;
 		box-shadow: 0 0 20px #13817f;
 		padding: 1rem;
-		background-color: black;
+		background-color: transparent;
 		border-radius: 1rem;
 
 		&:hover {
@@ -221,10 +221,22 @@
 		gap: 1rem;
 	}
 
+	&__business-buttons {
+		height: 40px;
+		width: 40px;
+		font-size: 1rem;
+		font-weight: 400;
+
+		&:hover {
+			// box-shadow: 0 0 20px #8451c9;
+			transform: scale(1.1);
+		}
+	}
+
 	&__links-img {
 		width: 2.5rem;
 		height: 2.5rem;
-		background-color: black;
+		background-color: transparent;
 		border: none;
 		cursor: pointer;
 		&:hover {

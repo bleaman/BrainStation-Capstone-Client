@@ -142,10 +142,13 @@ function MyProfilePage(token) {
 										</Link>
 										<div className="my-profile-page__business-buttons-container">
 											<Link data-tooltip="Edit Business" to={`/business/${business.id}/edit`}>
-												<img className="header__links-img" src={note} alt="Categories" />
+												<div className="my-profile-page__business-buttons">
+													<img className="header__links-img" src={note} alt="Categories" />
+												</div>
 											</Link>
 											{admin ? (
 												<div
+													className="my-profile-page__business-buttons"
 													onClick={() => {
 														handleDeleteBusiness(business.id);
 													}}
