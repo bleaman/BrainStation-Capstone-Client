@@ -17,14 +17,17 @@ import UserProfilePage from "./Pages/UserProfilePage/UserProfilePage";
 import Footer from "./components/Footer/Footer";
 import api from "./utilities/api";
 import React from "react";
+import { useState, useEffect } from "react";
+
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-	const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+	const [isLoginSubmitted, setIsLoginSubmitted] = useState(false);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	const localToken = localStorage.getItem("token");
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (localToken) {
 			setIsLoggedIn(true);
 		}
@@ -32,6 +35,7 @@ function App() {
 
 	function handleLogin(e) {
 		e.preventDefault();
+		setIsLoginSubmitted(true);
 		const loginInfo = {
 			email: e.target.email.value,
 			password: e.target.password.value,
@@ -41,8 +45,10 @@ function App() {
 			.then((res) => {
 				localStorage.setItem("token", res.data.token);
 				setIsLoggedIn(true);
+				setIsLoginSubmitted(false);
 			})
 			.catch((err) => {
+				setIsLoginSubmitted(false);
 				return console.log(err);
 			});
 	}
@@ -73,12 +79,12 @@ function App() {
 		return (
 			<HashRouter>
 				<Routes>
-					<Route path="/" element={<LoginPage handleLogin={handleLogin} />}></Route>
-					<Route path="/login" element={<LoginPage handleLogin={handleLogin} />}></Route>
+					<Route path="/" element={<LoginPage isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
+					<Route path="/login" element={<LoginPage isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
 					<Route path="/register" element={<RegisterPage />}></Route>
 					<Route path="/forgotpassword" element={<ForgotPasswordPage />}></Route>
 					<Route path="/forgotpassword/reset/:token" element={<ResetPasswordPage />}></Route>
-					<Route path="*" element={<LoginPage handleLogin={handleLogin} />}></Route>
+					<Route path="*" element={<LoginPage isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
 				</Routes>
 			</HashRouter>
 		);
