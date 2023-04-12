@@ -15,6 +15,11 @@
 	object-fit: cover;
 	object-position: center;
 	outline: none;
+	background: transparent;
+	background-color: transparent;
+}
+
+body {
 	background-color: black;
 }
 
@@ -26,7 +31,7 @@
 	flex-direction: column;
 	background-color: transparent;
 }
-button.animated {
+button.animate__animated {
 	width: 100%;
 	height: auto;
 	border-radius: 2.5rem;
@@ -36,7 +41,6 @@ button.animated {
 	cursor: pointer;
 	font-size: 1rem;
 	font-weight: bold;
-	color: white;
 	padding: 0.625rem 0.9375rem 0.625rem 0.9375rem;
 	margin-top: 0.625rem;
 	margin-bottom: 0.625rem;
@@ -45,7 +49,7 @@ button.animated {
 
 	&:hover {
 		background-color: #8451c9;
-		color: rgb(133, 191, 189);
+		color: black;
 	}
 }
 
@@ -61,9 +65,6 @@ a {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	background-color: black;
-	background-size: cover;
-	background-position: center;
 }
 
 input:-webkit-autofill {
@@ -168,7 +169,6 @@ input:-webkit-autofill {
 	position: relative;
 	width: 80px;
 	height: 80px;
-	// text-shadow: 0 0 20px #13817f;
 }
 .lds-default div {
 	position: absolute;

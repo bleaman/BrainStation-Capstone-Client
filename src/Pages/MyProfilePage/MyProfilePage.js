@@ -16,6 +16,7 @@ function MyProfilePage(token) {
 	const [userComments, setUserComments] = useState(null);
 	const [userIdState, setUserIdState] = useState(null);
 	const [businessList, setBusinessList] = useState(null);
+	const [admin, setAdmin] = useState(false);
 	const [reRender, setreRender] = useState(0);
 
 	useEffect(() => {
@@ -52,6 +53,17 @@ function MyProfilePage(token) {
 				return console.log(error);
 			});
 	}, [userIdState, reRender]);
+
+	useEffect(() => {
+		api
+			.get(`admin`)
+			.then((response) => {
+				return setAdmin(response.data.isAdmin);
+			})
+			.catch((error) => {
+				return console.log(error);
+			});
+	});
 
 	function handleDeleteBusiness(businessId) {
 		api
@@ -132,14 +144,16 @@ function MyProfilePage(token) {
 											<Link data-tooltip="Edit Business" to={`/business/${business.id}/edit`}>
 												<img className="header__links-img" src={note} alt="Categories" />
 											</Link>
-											<div
-												onClick={() => {
-													handleDeleteBusiness(business.id);
-												}}
-												data-tooltip="Delete (Admin)"
-											>
-												<img className="header__links-img" src={trash} alt="Categories" />
-											</div>
+											{admin ? (
+												<div
+													onClick={() => {
+														handleDeleteBusiness(business.id);
+													}}
+													data-tooltip="Delete (Admin)"
+												>
+													<img className="header__links-img" src={trash} alt="Categories" />
+												</div>
+											) : null}
 										</div>
 									</div>
 								</Animated>
