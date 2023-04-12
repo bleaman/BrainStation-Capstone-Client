@@ -46,6 +46,7 @@ function App() {
 		try {
 			const res = await api.post(`users/login`, loginInfo);
 			localStorage.setItem("token", res.data.token);
+			await delay(1000);
 			setIsLoggedIn(true);
 			setIsLoginSubmitted(false);
 		} catch (err) {
