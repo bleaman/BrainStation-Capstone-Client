@@ -149,7 +149,7 @@ function MyProfilePage(token) {
 													onClick={() => {
 														handleDeleteBusiness(business.id);
 													}}
-													data-tooltip="Delete (Admin)"
+													data-tooltip="Delete Business"
 												>
 													<img className="header__links-img" src={trash} alt="Categories" />
 												</div>
