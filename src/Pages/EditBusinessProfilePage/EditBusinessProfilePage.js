@@ -71,6 +71,20 @@ function EditBusinessProfilePage() {
 							<div className="edit-user__form-value">
 								<h2 className="edit-user__title animate__animated">Info Changed</h2>
 							</div>
+							<div className="lds-default">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
 						</div>
 					</Animated>
 				) : null}

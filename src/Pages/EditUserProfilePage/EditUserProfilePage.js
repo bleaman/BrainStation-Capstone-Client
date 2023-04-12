@@ -54,6 +54,20 @@ function EditUserProfilePage() {
 							<div className="edit-user__form-value">
 								<h2 className="edit-user__title">Info Changed</h2>
 							</div>
+							<div className="lds-default">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
 						</div>
 					</Animated>
 				) : null}
