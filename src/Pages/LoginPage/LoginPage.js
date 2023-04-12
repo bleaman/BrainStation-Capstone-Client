@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { delay } from "../../utilities/delay";
 import React from "react";
 
-function LoginPage({ handleLogin, isLoginSubmitted, isFailedLogin }) {
+function LoginPage({ handleLogin, isLoginSubmitted, isFailedLogin, isFailedLoginMessage }) {
 	const [isFormVisible, setIsFormVisible] = useState(false);
 	const [isFormSubmitted, setIsFormSubmitted] = useState(true);
 	const [isLoginFailed, setIsLoginFailed] = useState(false);
@@ -50,7 +50,7 @@ function LoginPage({ handleLogin, isLoginSubmitted, isFailedLogin }) {
 				{isFormSubmitted ? (
 					<Animated animationIn="zoomInLeft" animationInDuration={250} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="register-page__form-box">
-							<div className="register-page__form-value">{isLoginFailed ? <h2 className="register-page__title">Logging In</h2> : <h2 className="register-page__title">Log In Failed</h2>}</div>
+							<div className="register-page__form-value">{isLoginFailed ? <h2 className="register-page__title">Logging In</h2> : <h2 className="register-page__title">{isFailedLoginMessage}</h2>}</div>
 							<div className="lds-default">
 								<div></div>
 								<div></div>

@@ -26,6 +26,7 @@ function App() {
 	const [isLoginSubmitted, setIsLoginSubmitted] = useState(false);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [isFailedLogin, setIsFailedLogin] = useState(false);
+	const [isFailedLoginMessage, setIsFailedLoginMessage] = useState("Log In Failed");
 
 	const localToken = localStorage.getItem("token");
 
@@ -51,9 +52,11 @@ function App() {
 			setIsLoginSubmitted(false);
 		} catch (err) {
 			setIsFailedLogin(true);
+			setIsFailedLoginMessage(err.response.data.message);
 			await delay(3000);
 			setIsLoginSubmitted(false);
 			console.log(err);
+			console.log(err.response.data.message);
 		}
 	}
 
@@ -83,12 +86,12 @@ function App() {
 		return (
 			<HashRouter>
 				<Routes>
-					<Route path="/" element={<LoginPage isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
-					<Route path="/login" element={<LoginPage isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
+					<Route path="/" element={<LoginPage isFailedLoginMessage={isFailedLoginMessage} isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
+					<Route path="/login" element={<LoginPage isFailedLoginMessage={isFailedLoginMessage} isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
 					<Route path="/register" element={<RegisterPage />}></Route>
 					<Route path="/forgotpassword" element={<ForgotPasswordPage />}></Route>
 					<Route path="/forgotpassword/reset/:token" element={<ResetPasswordPage />}></Route>
-					<Route path="*" element={<LoginPage isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
+					<Route path="*" element={<LoginPage isFailedLoginMessage={isFailedLoginMessage} isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
 				</Routes>
 			</HashRouter>
 		);
