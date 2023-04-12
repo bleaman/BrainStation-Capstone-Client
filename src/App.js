@@ -18,12 +18,14 @@ import Footer from "./components/Footer/Footer";
 import api from "./utilities/api";
 import React from "react";
 import { useState, useEffect } from "react";
+import { delay } from "./utilities/delay";
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 	const [isLoginSubmitted, setIsLoginSubmitted] = useState(false);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [isFailedLogin, setIsFailedLogin] = useState(false);
 
 	const localToken = localStorage.getItem("token");
 
@@ -33,24 +35,25 @@ function App() {
 		}
 	}, [localToken]);
 
-	function handleLogin(e) {
+	async function handleLogin(e) {
 		e.preventDefault();
 		setIsLoginSubmitted(true);
+		setIsFailedLogin(false);
 		const loginInfo = {
 			email: e.target.email.value,
 			password: e.target.password.value,
 		};
-		api
-			.post(`users/login`, loginInfo)
-			.then((res) => {
-				localStorage.setItem("token", res.data.token);
-				setIsLoggedIn(true);
-				setIsLoginSubmitted(false);
-			})
-			.catch((err) => {
-				setIsLoginSubmitted(false);
-				return console.log(err);
-			});
+		try {
+			const res = await api.post(`users/login`, loginInfo);
+			localStorage.setItem("token", res.data.token);
+			setIsLoggedIn(true);
+			setIsLoginSubmitted(false);
+		} catch (err) {
+			setIsFailedLogin(true);
+			await delay(3000);
+			setIsLoginSubmitted(false);
+			console.log(err);
+		}
 	}
 
 	if (isLoggedIn) {
@@ -79,12 +82,12 @@ function App() {
 		return (
 			<HashRouter>
 				<Routes>
-					<Route path="/" element={<LoginPage isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
-					<Route path="/login" element={<LoginPage isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
+					<Route path="/" element={<LoginPage isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
+					<Route path="/login" element={<LoginPage isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
 					<Route path="/register" element={<RegisterPage />}></Route>
 					<Route path="/forgotpassword" element={<ForgotPasswordPage />}></Route>
 					<Route path="/forgotpassword/reset/:token" element={<ResetPasswordPage />}></Route>
-					<Route path="*" element={<LoginPage isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
+					<Route path="*" element={<LoginPage isFailedLogin={isFailedLogin} isLoginSubmitted={isLoginSubmitted} handleLogin={handleLogin} />}></Route>
 				</Routes>
 			</HashRouter>
 		);

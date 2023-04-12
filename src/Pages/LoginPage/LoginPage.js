@@ -6,14 +6,19 @@ import { useState, useEffect } from "react";
 import { delay } from "../../utilities/delay";
 import React from "react";
 
-function LoginPage({ handleLogin, isLoginSubmitted }) {
+function LoginPage({ handleLogin, isLoginSubmitted, isFailedLogin }) {
 	const [isFormVisible, setIsFormVisible] = useState(false);
 	const [isFormSubmitted, setIsFormSubmitted] = useState(true);
+	const [isLoginFailed, setIsLoginFailed] = useState(false);
 
 	useEffect(() => {
 		setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
 		setIsFormSubmitted((prevIsFormSubmitted) => !prevIsFormSubmitted);
 	}, [isLoginSubmitted]);
+
+	useEffect(() => {
+		setIsLoginFailed((prevIsLoginFailed) => !prevIsLoginFailed);
+	}, [isFailedLogin]);
 
 	async function doFunction(event) {
 		event.preventDefault();
@@ -43,11 +48,9 @@ function LoginPage({ handleLogin, isLoginSubmitted }) {
 					</div>
 				</Animated>
 				{isFormSubmitted ? (
-					<Animated animationIn="zoomInLeft" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
+					<Animated animationIn="zoomInLeft" animationInDuration={250} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isFormSubmitted}>
 						<div className="register-page__form-box">
-							<div className="register-page__form-value">
-								<h2 className="register-page__title">Logging In</h2>
-							</div>
+							<div className="register-page__form-value">{isLoginFailed ? <h2 className="register-page__title">Logging In</h2> : <h2 className="register-page__title">Log In Failed</h2>}</div>
 							<div className="lds-default">
 								<div></div>
 								<div></div>
@@ -66,7 +69,7 @@ function LoginPage({ handleLogin, isLoginSubmitted }) {
 					</Animated>
 				) : null}
 				{isFormVisible ? (
-					<Animated animationIn="zoomInRight" animationInDuration={3000} animationOut="zoomOutLeft" animationOutDuration={500} isVisible={isFormVisible}>
+					<Animated animationIn="zoomInRight" animationInDuration={2500} animationOut="zoomOutLeft" animationOutDuration={250} isVisible={isFormVisible}>
 						<div className="login-page__form-box">
 							<div className="login-page__form-value">
 								<form onSubmit={doFunction}>
@@ -102,7 +105,7 @@ function LoginPage({ handleLogin, isLoginSubmitted }) {
 						</div>
 					</Animated>
 				) : null}
-				<Animated animationIn="zoomInLeft" animationInDuration={2000} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
+				<Animated animationIn="zoomInLeft" animationInDuration={1500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={true}>
 					<div className="lds-ripple">
 						<div></div>
 						<div></div>
