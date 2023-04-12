@@ -17,7 +17,7 @@ import UserProfilePage from "./Pages/UserProfilePage/UserProfilePage";
 import Footer from "./components/Footer/Footer";
 import api from "./utilities/api";
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 	const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -50,7 +50,7 @@ function App() {
 	if (isLoggedIn) {
 		return (
 			<main className="app__main">
-				<BrowserRouter>
+				<HashRouter>
 					<Header />
 					<Routes>
 						<Route path="/" element={<CategoriesPage />}></Route>
@@ -66,12 +66,12 @@ function App() {
 						<Route path="*" element={<CategoriesPage />}></Route>
 					</Routes>
 					<Footer />
-				</BrowserRouter>
+				</HashRouter>
 			</main>
 		);
 	} else {
 		return (
-			<BrowserRouter>
+			<HashRouter>
 				<Routes>
 					<Route path="/" element={<LoginPage handleLogin={handleLogin} />}></Route>
 					<Route path="/login" element={<LoginPage handleLogin={handleLogin} />}></Route>
@@ -80,7 +80,7 @@ function App() {
 					<Route path="/forgotpassword/reset/:token" element={<ResetPasswordPage />}></Route>
 					<Route path="*" element={<LoginPage handleLogin={handleLogin} />}></Route>
 				</Routes>
-			</BrowserRouter>
+			</HashRouter>
 		);
 	}
 }
