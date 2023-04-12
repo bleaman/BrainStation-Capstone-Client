@@ -11,8 +11,8 @@ function LoginPage({ handleLogin, isLoginSubmitted }) {
 	const [isFormSubmitted, setIsFormSubmitted] = useState(true);
 
 	useEffect(() => {
-		setIsFormVisible(!isFormVisible);
-		setIsFormSubmitted(!isFormSubmitted);
+		setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
+		setIsFormSubmitted((prevIsFormSubmitted) => !prevIsFormSubmitted);
 	}, [isLoginSubmitted]);
 
 	async function doFunction(event) {
