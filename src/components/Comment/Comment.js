@@ -130,7 +130,7 @@ function Comment({ refreshComments, comments, nametag, linkprop }) {
 				{isEditing ? (
 					<Animated animationIn="zoomInUp" animationInDuration={500} animationOut="zoomOutDown" animationOutDuration={500} isVisible={isEditing}>
 						<form onSubmit={handleSaveClick} className="comment__content-box comment__edit-box">
-							<input className="comment__edit-input" type="text" autocomplete="off" value={newComment} onChange={(e) => setNewComment(e.target.value)} />
+							<input className="comment__edit-input" type="text" autoComplete="off" value={newComment} onChange={(e) => setNewComment(e.target.value)} />
 							<button className="comment__links-img-container" data-tooltip="Submit Change">
 								<img className="comment__links-img" src={lock} alt="Log Out" />
 							</button>

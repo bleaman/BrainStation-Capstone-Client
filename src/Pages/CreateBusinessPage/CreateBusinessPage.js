@@ -77,15 +77,15 @@ function CreateBusinessPage() {
 								<form onSubmit={handleSubmit}>
 									<h2 className="create-business__title animate__animated animate__lightSpeedInRight">Business Information</h2>
 									<div className="create-business__inputbox animate__animated animate__lightSpeedInRight">
-										<input className="create-business__input" minLength="1" maxLength="50" type="text" autocomplete="off" name="bizname" value={businessName} onChange={(event) => setBusinessName(event.target.value)} required />
+										<input className="create-business__input" minLength="1" maxLength="50" type="text" autoComplete="off" name="bizname" value={businessName} onChange={(event) => setBusinessName(event.target.value)} required />
 										<label className="create-business__label">Name</label>
 									</div>
 									<div className="create-business__inputbox animate__animated animate__lightSpeedInLeft">
-										<input className="create-business__input" minLength="1" maxLength="500" type="text" autocomplete="off" name="bizdescription" value={businessDescription} onChange={(event) => setBusinessDescription(event.target.value)} required />
+										<input className="create-business__input" minLength="1" maxLength="500" type="text" autoComplete="off" name="bizdescription" value={businessDescription} onChange={(event) => setBusinessDescription(event.target.value)} required />
 										<label className="create-business__label">Description</label>
 									</div>
 									<div className="create-business__inputbox animate__animated animate__lightSpeedInRight">
-										<input className="create-business__input" minLength="1" maxLength="250" type="text" autocomplete="off" name="bizlocation" value={businessLocation} onChange={(event) => setBusinessLocation(event.target.value)} required />
+										<input className="create-business__input" minLength="1" maxLength="250" type="text" autoComplete="off" name="bizlocation" value={businessLocation} onChange={(event) => setBusinessLocation(event.target.value)} required />
 										<label className="create-business__label">Location</label>
 									</div>
 									<div className="create-business__inputbox animate__animated animate__lightSpeedInLeft">

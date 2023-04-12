@@ -95,15 +95,15 @@ function EditBusinessProfilePage() {
 								<form onSubmit={handleSubmit}>
 									<h2 className="edit-business__title animate__animated animate__lightSpeedInLeft">Business Information</h2>
 									<div className="edit-business__inputbox animate__animated animate__lightSpeedInRight">
-										<input className="edit-business__input" minLength="1" maxLength="50" type="text" autocomplete="off" name="bizname" value={businessName} onChange={(event) => setBusinessName(event.target.value)} required />
+										<input className="edit-business__input" minLength="1" maxLength="50" type="text" autoComplete="off" name="bizname" value={businessName} onChange={(event) => setBusinessName(event.target.value)} required />
 										<label className="edit-business__label">Name</label>
 									</div>
 									<div className="edit-business__inputbox animate__animated animate__lightSpeedInLeft">
-										<input className="edit-business__input" minLength="1" maxLength="500" type="text" autocomplete="off" name="bizdescription" value={businessDescription} onChange={(event) => setBusinessDescription(event.target.value)} required />
+										<input className="edit-business__input" minLength="1" maxLength="500" type="text" autoComplete="off" name="bizdescription" value={businessDescription} onChange={(event) => setBusinessDescription(event.target.value)} required />
 										<label className="edit-business__label">Description</label>
 									</div>
 									<div className="edit-business__inputbox animate__animated animate__lightSpeedInRight">
-										<input className="edit-business__input" minLength="1" maxLength="250" type="text" autocomplete="off" name="bizlocation" value={businessLocation} onChange={(event) => setBusinessLocation(event.target.value)} required />
+										<input className="edit-business__input" minLength="1" maxLength="250" type="text" autoComplete="off" name="bizlocation" value={businessLocation} onChange={(event) => setBusinessLocation(event.target.value)} required />
 										<label className="edit-business__label">Location</label>
 									</div>
 									<div className="edit-business__inputbox animate__animated animate__lightSpeedInLeft">
