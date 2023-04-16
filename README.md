@@ -56,7 +56,7 @@ MAILER_SECURE=true
 - Create mySQL database
 
 ```bash
-  CREATE DATABASE capstone_db;
+  CREATE DATABASE capstone_db
 ```
 
 - Run migration and seed files
